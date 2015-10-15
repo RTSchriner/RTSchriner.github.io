@@ -6299,12 +6299,15 @@ a.bg-danger:hover {
   }
 }
 
-#nav {
+#header {
+  display: inline-block;
+  width: 100%;
   padding: 15px 65px;
   background-color: #5bc0de;
 }
 
-#nav .navbar-brand {
+#header .brand {
+  margin-bottom: 0;
   color: #373a3c;
 }
 
