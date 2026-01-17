@@ -1,0 +1,151 @@
+:root {
+  --bg-start: #f0f4ff;
+  --bg-end: #e6ecff;
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --focus-ring: #2563eb;
+  --image-size: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 320px;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, var(--bg-start), var(--bg-end));
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 527px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px; /* keep same for bottom corners */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  overflow: hidden; /* ensures banner rounding is respected */
+}
+
+/* Card banner */
+.card-banner {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 16px 16px 0 0; /* round top corners to match card */
+  text-align: center;
+}
+
+.card-banner h1 {
+  margin: 0;
+  font-size: 1.25rem; /* smaller than default h1 for design */
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.5px; /* subtle spacing for readability */
+}
+
+.card-content {
+  padding: 1rem 1.75rem 2rem;
+}
+
+/* Logo */
+.logo {
+  width: var(--image-size);
+  height: var(--image-size);
+  margin: 0 auto 1rem;
+  border-radius: 50%; /* circular headshot */
+  object-fit: cover; /* ensures image scales properly */
+  display: block;
+}
+
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+/* Skills */
+.skills {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.skills li {
+  background: #eef2ff;
+  color: var(--primary-dark);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Links */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+/* Focus styles */
+a:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
