@@ -7,6 +7,7 @@
   --text-muted: #4b5563;
   --focus-ring: #2563eb;
   --image-size: 100px;
+  --ring-background: #eef2ff;
 }
 
 * {
@@ -101,7 +102,7 @@ p {
 }
 
 .skills li {
-  background: #eef2ff;
+  background: var(--ring-background);;
   color: var(--primary-dark);
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
@@ -117,29 +118,51 @@ p {
   flex-wrap: wrap;
 }
 
-.links a {
-  color: var(--primary);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.links a:hover,
-.links a:focus-visible {
-  text-decoration: underline;
-  color: var(--primary-dark);
-}
-
-/* Focus styles */
-a:focus-visible {
-  outline: 3px solid var(--focus-ring);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
 footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;
   color: #6b7280;
+}
+
+/* Primary CTA Button */
+a.cta-button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+
+  background-color: var(--primary-dark);
+  color: var(--bg-start);
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  padding: 0.75rem 1.75rem;
+  min-height: 44px; /* WCAG touch target */
+  min-width: 44px;
+
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover */
+.cta-button:hover {
+  background-color: var(--ring-background);
+  color: var(--primary-dark);
+}
+
+/* Keyboard focus */
+.cta-button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+/* Active (pressed) */
+.cta-button:active {
+  transform: translateY(1px);
 }
 
 /* Reduced motion support */
